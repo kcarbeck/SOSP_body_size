@@ -1,6 +1,7 @@
 #!/bin/bash
+#author:Joana Meier
 
-# Before running admixture we need to filtered pretty heavily for linkage. There are several ways to do this, but I follwed Joana Meier's LD Pruning script: 
+# Before running admixture we need to filtered pretty heavily for linkage. There are several ways to do this, but I follwed this script from Joana Meier:
 # script that prunes SNPs with too high linkage 
 # requires vcftools and plink
 # Uses plink to remove SNPs with r2>0.2 in a window of 50 kb sliding by 10 kb
