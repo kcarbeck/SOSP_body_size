@@ -44,6 +44,7 @@ https://gatk.broadinstitute.org/hc/en-us/articles/360037052812-MarkDuplicates-Pi
 ## 5. Variant discovery & filtering
 
 split by chromosome/contig to run in parallel
+
 mpileup: http://www.htslib.org/doc/bcftools.html#mpileup
 
 
