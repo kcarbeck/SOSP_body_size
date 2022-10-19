@@ -50,3 +50,28 @@ fastqc SOSP23_CKDL210008109-1a_H55TTDSX2_L2_1.fq.gz &
 fastqc SOSP23_CKDL210008109-1a_H55TTDSX2_L2_2.fq.gz &
 fastqc SOSP24_CKDL210008110-1a_H55V5DSX2_L1_1.fq.gz &
 fastqc SOSP24_CKDL210008110-1a_H55V5DSX2_L1_2.fq.gz
+
+
+
+################################################
+### alternative method used for new samples ####
+
+
+# find /workdir/kcarbeck/usftp21.novogene.com/01.RawData/*/*.gz -type f > listOfFiles.list
+
+find *.gz -type f > listOfFiles.list
+
+awk -v FS="\t" '
+{
+    if (NR > 1){
+        samp=$1
+        print "fastqc"  " " samp
+    }
+}
+' listOfFiles.list > list.txt
+
+
+parallel -j 22 < /workdir/kcarbeck/list.txt
+
+
+
